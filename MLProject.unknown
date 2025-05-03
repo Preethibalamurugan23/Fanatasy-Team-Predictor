@@ -1,0 +1,19 @@
+name: fantasy-ipl-prediction
+
+conda_env: conda.yaml
+
+entry_points:
+  main:
+    parameters:
+      fullName: {type: str}
+      venue: {type: str}
+      batting_innings: {type: int}
+      home_team: {type: str}
+      away_team: {type: str}
+    command: >
+      python predict.py
+      --fullName {fullName}
+      --venue {venue}
+      --batting_innings {batting_innings}
+      --home_team {home_team}
+      --away_team {away_team}

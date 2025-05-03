@@ -1,0 +1,43 @@
+2025-04-27 16:32:59,932:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-27 16:33:00,001:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-27 16:33:00,025:INFO:Player and Venue label encoding completed.
+2025-04-27 16:33:00,029:INFO:Encoders saved.
+2025-04-27 16:34:25,208:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-27 16:34:25,249:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-27 16:34:25,256:INFO:Player and Venue label encoding completed.
+2025-04-27 16:34:25,258:INFO:Encoders saved.
+2025-04-27 16:34:25,285:INFO:One-hot encoding completed.
+2025-04-27 16:34:25,319:INFO:Processed arrays saved successfully.
+2025-04-27 21:57:31,759:INFO:Loading artifacts...
+2025-04-27 21:57:31,759:ERROR:Error: One or more required artifact files are missing.
+2025-04-27 21:57:31,759:ERROR:Please ensure these files exist in 'processed_data':
+2025-04-27 21:57:31,759:ERROR: - fantasy_model.h5
+2025-04-27 21:57:31,759:ERROR: - player_encoder.pkl
+2025-04-27 21:57:31,759:ERROR: - venue_encoder.pkl
+2025-04-27 21:57:31,759:ERROR: - onehot_encoder.pkl
+2025-04-30 09:54:25,318:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-30 09:54:25,351:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-30 09:54:25,364:INFO:Player and Venue label encoding completed.
+2025-04-30 09:54:25,365:INFO:Encoders saved.
+2025-04-30 10:02:08,674:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-30 10:02:08,736:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-30 10:02:08,747:INFO:Player and Venue label encoding completed.
+2025-04-30 10:02:08,750:INFO:Encoders saved.
+2025-04-30 10:02:54,308:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-30 10:02:54,341:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-30 10:02:54,349:INFO:Player and Venue label encoding completed.
+2025-04-30 10:02:54,351:INFO:Encoders saved.
+2025-04-30 10:02:54,384:INFO:One-hot encoding completed.
+2025-04-30 10:02:54,392:INFO:Processed arrays saved successfully.
+2025-04-30 10:04:05,331:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-30 10:04:05,369:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-30 10:04:05,377:INFO:Player and Venue label encoding completed.
+2025-04-30 10:04:05,380:INFO:Encoders saved.
+2025-04-30 10:04:05,404:INFO:One-hot encoding completed.
+2025-04-30 10:04:05,426:INFO:Processed arrays saved successfully.
+2025-04-30 10:06:40,055:INFO:Starting preprocessing for C:/Users/Preethi/Downloads/mlops_project/data/Final_Fantasy_data.csv
+2025-04-30 10:06:40,087:INFO:Data loaded successfully. Shape: (22362, 17)
+2025-04-30 10:06:40,096:INFO:Player and Venue label encoding completed.
+2025-04-30 10:06:40,121:INFO:Encoders saved.
+2025-04-30 10:06:40,143:INFO:One-hot encoding completed.
+2025-04-30 10:06:40,151:INFO:Processed arrays saved successfully.

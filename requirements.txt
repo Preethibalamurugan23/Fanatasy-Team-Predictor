@@ -1,0 +1,28 @@
+# For the FastAPI application
+fastapi
+uvicorn[standard]
+
+# For CORS support
+python-multipart
+aiofiles
+requests
+pydantic
+
+# For metrics with Prometheus
+prometheus-client
+
+# If you're doing ML predictions
+scikit-learn
+numpy
+pandas
+
+# Optional: if your app uses MLflow model server
+# mlflow
+
+# For structured logging (optional)
+loguru
+# tensorflow
+# keras==3.6.0 
+tensorflow==2.19.0
+numpy==1.26.2
+mlflow==2.22

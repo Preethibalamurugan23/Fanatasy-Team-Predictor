@@ -1,0 +1,67 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: py -3.10 preprocess.py
+    deps:
+    - path: data
+      hash: md5
+      md5: 1872813b5ab3b5c449655deb6ec4a550.dir
+      size: 8080863
+      nfiles: 8
+    - path: preprocess.py
+      hash: md5
+      md5: df1d51791a48c147a7e8d682ffdc6e85
+      size: 2867
+    outs:
+    - path: processed_data/onehot_inputs.npy
+      hash: md5
+      md5: a85228770d28e7dacd4370ce22dd228e
+      size: 5367008
+    - path: processed_data/player_ids.npy
+      hash: md5
+      md5: df705f6bb8550e146343f90c254fac21
+      size: 89576
+    - path: processed_data/target_fp.npy
+      hash: md5
+      md5: 7a4baab1fdc660f31b3c2213c87c226d
+      size: 179024
+    - path: processed_data/venue_ids.npy
+      hash: md5
+      md5: 9ed84e54c157db2964ff37b290926ce6
+      size: 89576
+  train_model:
+    cmd: py -3.10 train.py
+    deps:
+    - path: processed_data/onehot_inputs.npy
+      hash: md5
+      md5: a85228770d28e7dacd4370ce22dd228e
+      size: 5367008
+    - path: processed_data/player_ids.npy
+      hash: md5
+      md5: df705f6bb8550e146343f90c254fac21
+      size: 89576
+    - path: processed_data/target_fp.npy
+      hash: md5
+      md5: 7a4baab1fdc660f31b3c2213c87c226d
+      size: 179024
+    - path: processed_data/venue_ids.npy
+      hash: md5
+      md5: 9ed84e54c157db2964ff37b290926ce6
+      size: 89576
+    - path: train.py
+      hash: md5
+      md5: 7bbcdb6001b14250572ed9aaa68ca7ae
+      size: 14733
+    outs:
+    - path: logs/train.log
+      hash: md5
+      md5: b4b2d8b49dbb4b49dca20825a82941c1
+      size: 6007
+  evaluate:
+    cmd: py -3.10 predict.py --fullName "Virat Kohli" --venue "M.Chinnaswamy Stadium,
+      Bengaluru" --batting_innings 1 --home_team RCB --away_team CSK
+    deps:
+    - path: predict.py
+      hash: md5
+      md5: 39ba6d35320b4927100e268e87417404
+      size: 16226

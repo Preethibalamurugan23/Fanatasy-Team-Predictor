@@ -1,0 +1,102 @@
+# version: "3.8"
+# services:
+#   mlflow_model_server:
+#     image: python:3.10-slim
+#     container_name: mlflow_model_server
+#     working_dir: /mlflow_model
+#     command: >
+#       /bin/bash -c "
+#       pip install --no-cache-dir mlflow &&
+#       mlflow models serve --model-uri runs:/34261a26df834786a4a84f7ad61a8a3d/model --host 0.0.0.0 --port 5000 --env-manager=local
+#       "
+#     ports:
+#       - "5000:5000"
+
+#   fastapi_app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.app
+#     container_name: fastapi_app
+#     ports:
+#       - "8000:8000"
+#     depends_on:
+#       - mlflow_model_server
+#     environment:
+#       - MLFLOW_SERVER=http://mlflow_model_server:5000
+
+version: "3.8"
+
+services:
+  # mlflow_model_server:
+  #   image: python:3.10-slim
+  #   container_name: mlflow_model_server
+  #   working_dir: /mlflow_model
+  #   command: >
+  #     /bin/bash -c "
+  #     pip install --no-cache-dir mlflow &&
+  #     mlflow models serve --model-uri runs:/34261a26df834786a4a84f7ad61a8a3d/model --host 0.0.0.0 --port 5000 --env-manager=local
+  #     "
+  #   ports:
+  #     - "5000:5000"
+  #   networks:
+  #     - monitor-net
+  mlflow_model_server:
+    image: python:3.10-slim
+    container_name: mlflow_model_server
+    working_dir: /mlflow_model
+    command: >
+      /bin/bash -c "
+      pip install --no-cache-dir mlflow &&
+      mlflow models serve --model-uri /mlruns/556428375269890437/34261a26df834786a4a84f7ad61a8a3d/artifacts/model --host 0.0.0.0 --port 5000 --env-manager=local
+      "
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlruns:ro  # Correct volume path for Docker on Windows
+    networks:
+      - monitor-net
+
+  fastapi_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.app
+    container_name: fastapi_app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mlflow_model_server
+    environment:
+      - MLFLOW_SERVER=http://mlflow_model_server:5000
+    networks:
+      - monitor-net
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - monitor-net
+
+  node_exporter:
+    image: prom/node-exporter
+    container_name: node-exporter
+    ports:
+      - "9100:9100"
+    networks:
+      - monitor-net
+
+  services:
+  static-ui:
+    build:
+      context: .
+      dockerfile: Dockerfile.UI
+    ports:
+      - "3000:3000"
+
+
+networks:
+  monitor-net:
+    driver: bridge

@@ -1,0 +1,60 @@
+# # Training parameters
+# epochs: 30
+# batch_size: 64
+# test_size: 0.15
+# random_state: 123
+
+# # Default model parameters
+# player_embedding_dim: 48
+# venue_embedding_dim: 12
+# dropout_rate: 0.2
+# dense_units1: 256
+# dense_units2: 128
+# fusion_type: concat # Default fusion type
+
+# # Model-specific parameters
+# deep_fc:
+#   dropout_rate: 0.3
+
+# wide_fc:
+#   player_embedding_dim: 64
+#   venue_embedding_dim: 16
+
+# bn_model:
+#   player_embedding_dim: 32
+#   venue_embedding_dim: 8
+
+# dual_path:
+#   player_embedding_dim: 48
+#   venue_embedding_dim: 12
+#   dropout_rate: 0.2
+#   dense_units1: 256
+#   dense_units2: 128
+
+# feature_fusion:
+#   player_embedding_dim: 48
+#   venue_embedding_dim: 12
+#   fusion_type: concat  # 'concat', 'multiply', or 'add'
+#   dropout_rate: 0.2
+#   dense_units1: 256
+#   dense_units2: 128
+
+# residual:
+#   player_embedding_dim: 48
+#   venue_embedding_dim: 12
+#   dropout_rate: 0.2
+#   dense_units1: 256
+#   dense_units2: 128
+
+# Training parameters
+epochs: 30
+batch_size: 64
+test_size: 0.15
+random_state: 123
+
+# Parameters for the two-stage model
+player_embedding_dim: 128  # Stage 1: Player embedding dimension
+venue_embedding_dim: 32    # Stage 1: Venue embedding dimension
+stage1_units: 64           # Stage 1: Number of units in the dense layer
+dense_units1: 256          # Stage 2: Number of units in the first dense layer
+dense_units2: 128          # Stage 2: Number of units in the second dense layer

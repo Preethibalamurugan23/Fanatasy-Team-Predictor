@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Preethi/Downloads/mlops_project/mlruns/556428375269890437/85b3c7f82adf4df7b13270805e39d363/artifacts
+end_time: 1745754096559
+entry_point_name: ''
+experiment_id: '556428375269890437'
+lifecycle_stage: active
+run_id: 85b3c7f82adf4df7b13270805e39d363
+run_name: polite-shrimp-227
+run_uuid: 85b3c7f82adf4df7b13270805e39d363
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745754096361
+status: 3
+tags: []
+user_id: Preethi

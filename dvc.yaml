@@ -1,0 +1,41 @@
+# stages:
+#   preprocess:
+#     cmd: \ -d data \ -d preprocess.py \ -o processed.csv \ python preprocess.py
+#   train_model:
+#     cmd: \ -d processed_data/player_ids.npy \ -d processed_data/venue_ids.npy \ -d
+#       processed_data/onehot_inputs.npy \ -d processed_data/target_fp.npy \ -d train.py
+#       \ -o models/fantasy_model.h5 \ -o models/validation_predictions.png \ -o logs/train.log
+#       \ python train.py
+#   evaluate:
+#     cmd: \ -d predict.py \ -p fullName,venue,batting_innings,home_team,away_team \
+#       -o predictions.json \ python predict.py \ --fullName "Virat Kohli" \ --venue
+#       "M.Chinnaswamy Stadium, Bengaluru" \ --batting_innings 1 \ --home_team RCB \
+#       --away_team CSK \ --output predictions.json
+
+stages:
+  preprocess:
+    cmd: py -3.10 preprocess.py
+    deps:
+      - data
+      - preprocess.py
+    outs:
+      - processed_data/player_ids.npy
+      - processed_data/venue_ids.npy
+      - processed_data/onehot_inputs.npy
+      - processed_data/target_fp.npy
+
+  train_model:
+    cmd: py -3.10 train.py
+    deps:
+      - processed_data/player_ids.npy
+      - processed_data/venue_ids.npy
+      - processed_data/onehot_inputs.npy
+      - processed_data/target_fp.npy
+      - train.py
+    outs:
+      - logs/train.log
+
+  evaluate:
+    cmd: py -3.10 predict.py --fullName "Virat Kohli" --venue "M.Chinnaswamy Stadium, Bengaluru" --batting_innings 1 --home_team RCB --away_team CSK
+    deps:
+      - predict.py

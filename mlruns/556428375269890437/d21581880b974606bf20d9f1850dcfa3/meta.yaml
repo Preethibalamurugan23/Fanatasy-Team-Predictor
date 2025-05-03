@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Preethi/Downloads/mlops_project/mlruns/556428375269890437/d21581880b974606bf20d9f1850dcfa3/artifacts
+end_time: 1745754233154
+entry_point_name: ''
+experiment_id: '556428375269890437'
+lifecycle_stage: active
+run_id: d21581880b974606bf20d9f1850dcfa3
+run_name: resilient-moose-299
+run_uuid: d21581880b974606bf20d9f1850dcfa3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745754196750
+status: 3
+tags: []
+user_id: Preethi

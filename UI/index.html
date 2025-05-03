@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IPL Fantasy Predictor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+
+    <div class="sidebar">
+      <h2>IPL Fantasy Predictor</h2>
+
+      <label for="homeTeam">Home Team:</label>
+      <select id="homeTeam">
+        <option value="">Select Home Team</option>
+      </select>
+
+      <label for="awayTeam">Away Team:</label>
+      <select id="awayTeam">
+        <option value="">Select Away Team</option>
+      </select>
+
+      <label for="venue">Venue:</label>
+      <select id="venue">
+        <option value="">Select Venue</option>
+      </select>
+
+      <label for="inning">Batting:</label>
+      <select id="inning">
+        <option value="">Select Inning</option>
+        <option value="1">Batting First</option>
+        <option value="2">Batting Second</option>
+      </select>
+
+      <label for="year">Year:</label>
+      <input type="text" id="year" value="2025">
+
+      <button id="predictBtn">Predict Fantasy Team</button>
+    </div>
+
+    <div class="main">
+      <div class="logos">
+        <div id="homeLogo" class="team-logo">
+          <p>Home Team</p>
+        </div>
+        <p class="vs">VS</p>
+        <div id="awayLogo" class="team-logo">
+          <p>Away Team</p>
+        </div>
+      </div>
+
+      <div class="predicted-players">
+        <h3>Predicted Players</h3>
+        <div id="fantasyTeam"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/Preethi/Downloads/mlops_project/mlruns/236459473048754557/3fb99ef3cbd8439c858adadbe6b0d2f8/artifacts
+end_time: 1745758823895
+entry_point_name: ''
+experiment_id: '236459473048754557'
+lifecycle_stage: active
+run_id: 3fb99ef3cbd8439c858adadbe6b0d2f8
+run_name: model_residual
+run_uuid: 3fb99ef3cbd8439c858adadbe6b0d2f8
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1745758811788
+status: 3
+tags: []
+user_id: Preethi

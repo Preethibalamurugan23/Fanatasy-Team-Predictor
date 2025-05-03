@@ -1,0 +1,69 @@
+2025-04-30 10:16:20,135:INFO:Starting training function.
+2025-04-30 10:16:20,139:WARNING:Malformed experiment 'mlruns'. Detailed error Yaml file 'C:\Users\Preethi\Downloads\mlops_project\mlruns\mlruns\meta.yaml' does not exist.
+Traceback (most recent call last):
+  File "C:\Users\Preethi\AppData\Local\Programs\Python\Python310\lib\site-packages\mlflow\store\tracking\file_store.py", line 329, in search_experiments
+    exp = self._get_experiment(exp_id, view_type)
+  File "C:\Users\Preethi\AppData\Local\Programs\Python\Python310\lib\site-packages\mlflow\store\tracking\file_store.py", line 427, in _get_experiment
+    meta = FileStore._read_yaml(experiment_dir, FileStore.META_DATA_FILE_NAME)
+  File "C:\Users\Preethi\AppData\Local\Programs\Python\Python310\lib\site-packages\mlflow\store\tracking\file_store.py", line 1373, in _read_yaml
+    return _read_helper(root, file_name, attempts_remaining=retries)
+  File "C:\Users\Preethi\AppData\Local\Programs\Python\Python310\lib\site-packages\mlflow\store\tracking\file_store.py", line 1366, in _read_helper
+    result = read_yaml(root, file_name)
+  File "C:\Users\Preethi\AppData\Local\Programs\Python\Python310\lib\site-packages\mlflow\utils\file_utils.py", line 310, in read_yaml
+    raise MissingConfigException(f"Yaml file '{file_path}' does not exist.")
+mlflow.exceptions.MissingConfigException: Yaml file 'C:\Users\Preethi\Downloads\mlops_project\mlruns\mlruns\meta.yaml' does not exist.
+2025-04-30 10:16:20,751:INFO:MLflow run started.
+2025-04-30 10:16:20,775:INFO:Attempting to load original context data.
+2025-04-30 10:16:20,835:INFO:Original context data loaded successfully.
+2025-04-30 10:16:20,835:INFO:Loading processed data (.npy files).
+2025-04-30 10:16:20,841:INFO:Processed data loaded successfully.
+2025-04-30 10:16:20,842:INFO:Validating shape of loaded data.
+2025-04-30 10:16:20,842:INFO:Reshaping data for model input.
+2025-04-30 10:16:20,842:INFO:Data reshaped.
+2025-04-30 10:16:20,842:INFO:player_ids shape: (22362, 1)
+2025-04-30 10:16:20,842:INFO:venue_ids shape: (22362, 1)
+2025-04-30 10:16:20,843:INFO:onehot_inputs shape: (22362, 30)
+2025-04-30 10:16:20,843:INFO:target_fp shape: (22362, 1)
+2025-04-30 10:16:20,843:INFO:player_ids dtype: int32
+2025-04-30 10:16:20,843:INFO:venue_ids dtype: int32
+2025-04-30 10:16:20,844:INFO:onehot_inputs dtype: float64
+2025-04-30 10:16:20,844:INFO:Splitting data into training and validation sets.
+2025-04-30 10:16:20,848:INFO:Features split successfully.
+2025-04-30 10:16:20,851:INFO:Context data split successfully.
+2025-04-30 10:16:20,851:INFO:Data summary - Players: 705, Venues: 37, Onehot feature size: 30
+2025-04-30 10:16:20,851:INFO:Building the model.
+2025-04-30 10:16:20,851:INFO:Building model architecture.
+2025-04-30 10:16:20,857:INFO:Defining input layers.
+2025-04-30 10:16:20,859:INFO:Input layers defined.
+2025-04-30 10:16:20,859:INFO:Creating embedding layers.
+2025-04-30 10:16:20,914:INFO:Embedding layers created.
+2025-04-30 10:16:20,914:INFO:Flattening embedding layers.
+2025-04-30 10:16:20,917:INFO:Embedding layers flattened.
+2025-04-30 10:16:20,918:INFO:Concatenating embedding and one-hot features.
+2025-04-30 10:16:20,919:INFO:Features concatenated.
+2025-04-30 10:16:20,919:INFO:Adding dense layers.
+2025-04-30 10:16:20,939:INFO:Dense layers added.
+2025-04-30 10:16:20,949:INFO:Model compiled successfully.
+2025-04-30 10:16:20,949:INFO:Model built.
+2025-04-30 10:16:29,823:INFO:Starting model training.
+2025-04-30 10:16:39,004:INFO:Model training finished.
+2025-04-30 10:16:39,004:INFO:Evaluating model on the validation set.
+2025-04-30 10:16:39,427:INFO:Final Validation MSE: 1071.5215, MAE: 25.3680
+2025-04-30 10:16:39,427:INFO:Making predictions on the validation set.
+2025-04-30 10:16:40,385:INFO:Predictions made.
+2025-04-30 10:16:40,386:INFO:Displaying sample validation predictions.
+2025-04-30 10:16:40,386:INFO:Context available, printing predictions with header: Player Name	Venue	Match Details	Actual FP	Predicted FP	Difference
+2025-04-30 10:16:40,387:INFO:Sample 0: Player=Ravindra Jadeja, Venue=MA Chidambaram Stadium, Chepauk, Chennai, Match=Inn:1 (CSK vs LSG), Actual=15.0, Predicted=47.4, Difference=-32.4
+2025-04-30 10:16:40,415:INFO:Sample 1: Player=Gurkeerat Singh Mann, Venue=M.Chinnaswamy Stadium, Bengaluru, Match=Inn:1 (RCB vs RR), Actual=11.0, Predicted=36.2, Difference=-25.2
+2025-04-30 10:16:40,445:INFO:Sample 2: Player=Dwayne Bravo, Venue=MA Chidambaram Stadium, Chepauk, Chennai, Match=Inn:1 (CSK vs SRH), Actual=30.0, Predicted=50.7, Difference=-20.7
+2025-04-30 10:16:40,477:INFO:Sample 3: Player=Ishant Sharma, Venue=Eden Gardens, Kolkata, Match=Inn:2 (KKR vs RCB), Actual=14.0, Predicted=29.2, Difference=-15.2
+2025-04-30 10:16:40,507:INFO:Sample 4: Player=Morne Morkel, Venue=Sheikh Zayed Stadium, Abu Dhabi, Match=Inn:2 (KKR vs PBKS), Actual=59.0, Predicted=40.9, Difference=+18.1
+2025-04-30 10:16:40,538:INFO:Sample 5: Player=Sanjay Bangar, Venue=Rajiv Gandhi International Stadium, Uppal, Hyderabad, Match=Inn:1 (SRH vs DC), Actual=2.0, Predicted=27.5, Difference=-25.5
+2025-04-30 10:16:40,573:INFO:Sample 6: Player=Mohammad Kaif, Venue=Sawai Mansingh Stadium, Jaipur, Match=Inn:2 (RR vs SRH), Actual=23.0, Predicted=25.2, Difference=-2.2
+2025-04-30 10:16:40,624:INFO:Sample 7: Player=Jaskaran Singh, Venue=Brabourne Stadium, Mumbai, Match=Inn:2 (MI vs SRH), Actual=-2.0, Predicted=36.5, Difference=-38.5
+2025-04-30 10:16:40,669:INFO:Sample 8: Player=George Bailey, Venue=Wankhede Stadium, Mumbai, Match=Inn:1 (MI vs PBKS), Actual=21.0, Predicted=33.2, Difference=-12.2
+2025-04-30 10:16:40,715:INFO:Sample 9: Player=Zaheer Khan, Venue=Brabourne Stadium, Mumbai, Match=Inn:1 (MI vs SRH), Actual=66.0, Predicted=41.1, Difference=+24.9
+2025-04-30 10:16:40,745:INFO:Saving validation predictions plot.
+2025-04-30 10:16:49,253:INFO:Model saved (tracked by MLflow).
+2025-04-30 10:16:49,253:INFO:MLflow run finished.
+2025-04-30 10:16:49,257:INFO:Training script finished.
